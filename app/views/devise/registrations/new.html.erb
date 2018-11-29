@@ -1,0 +1,52 @@
+<% flash.each do |key, value| %>
+<div class="alert alert-<%= key %>">
+  <a href="#" data-dismiss="alert" ></a>
+  <ul style="list-style-type: none">
+    <li>
+      <% if key == "alert"%>
+      <div class="alert alert-danger alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong> <%= value %></strong>
+      </div>
+      <% end %>
+    </li>
+  </ul>
+</div>
+<% end %>
+<div class="col-md-6 col-md-offset-3 box-login">
+  <span><i class="fa fa-users  fa-5x"></i></span>
+  <br>
+  <br>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Numero_usuario %><br />
+    <%= f.number_field :userNumber, autofocus: true%>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

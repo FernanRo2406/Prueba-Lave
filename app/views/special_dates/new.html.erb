@@ -1,0 +1,20 @@
+<%= form_for :special_date, url: special_dates_path do |f| %>
+  <p>
+    <%= f.label :Date %><br>
+    <%= f.date_select :date %>
+  </p>
+ 
+  <p>
+    <%= f.label :Start_time %><br>
+    <%= f.time_select :startTime %>
+  </p>
+
+  <p>
+    <%= f.label :End_time %><br>
+    <%= f.time_select :endTime %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,21 @@
+<center><h1>Hola  tu vieja en tanga</h1></center>
+
+<h1>Listing articles</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Start time</th>
+    <th>End time</th>
+  </tr>
+
+  <% @special_dates.each do |special_dates| %>
+    <tr>
+      <td><%= special_dates.date %></td>
+      <td><%= special_dates.startTime %></td>
+      <td><%= special_dates.endTime %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Special date', new_special_date_path, class: 'btn-success btn btn-sm' %>

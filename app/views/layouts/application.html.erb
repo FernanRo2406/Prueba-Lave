@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Laveuap</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="fondo">
+    <%#= alert if alert %>
+    <%#= notice if notice %>
+
+    <div class="container-fluid">
+      <div class="row">
+            <div class="col">
+            <%= render 'layouts/menu' %>
+            </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
